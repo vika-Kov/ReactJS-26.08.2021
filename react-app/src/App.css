@@ -38,3 +38,24 @@
     transform: rotate(360deg);
   }
 }
+
+.placeholder__text {
+  border-radius: 20px;
+  height: 40px;
+  width: 150px;
+  background: white;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 24px;
+}
+
+.submit__button {
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  background: #F16D7F;
+  font-style: normal;
+  color: #FFFFFF;
+
+}

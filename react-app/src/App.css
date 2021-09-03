@@ -39,23 +39,16 @@
   }
 }
 
-.placeholder__text {
-  border-radius: 20px;
-  height: 40px;
-  width: 150px;
-  background: white;
-  text-align: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 24px;
+.form_f {
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
-.submit__button {
-  border: none;
-  height: 40px;
-  border-radius: 20px;
-  background: #F16D7F;
-  font-style: normal;
-  color: #FFFFFF;
+.form_ul {
+  display: flex;
+  justify-content: center;
+}
 
+.form_ul_list {
+  width: 300px;
 }

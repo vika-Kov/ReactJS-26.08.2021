@@ -1,15 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import Message from './components/Message';
+import MessageList from './components/MessageList';
+import React, { useState, useEffect } from 'react';
 
-const myName = 'Vika';  
+const initPost = ["Hello, "]
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Message name={myName}/>
+
+        <MessageList />
       </header>
     </div>
   );

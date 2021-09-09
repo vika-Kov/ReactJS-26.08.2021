@@ -8,6 +8,7 @@ import {
     ListItem,
     ListItemText ,
 } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 
 
@@ -16,7 +17,7 @@ export default function MessageList(){
     const [name, setName] = useState("");
     const [messageList, setMessageList] = useState([{text:"Text", author:"Vika"}]);
     const [botMessage, setMessage]=useState(`Hello, Vika! I'm a Bot!`);
-    const [chatList, setChatList]=useState([{id:1, name:"default"}, {id:2, name:"chat 2"}])
+    const [chatList, setChatList]=useState([{id:1, name:"chat1"}, {id:2, name:"chat 2"}])
 
     const loadBotMessage = ()=>{
         setMessageList([...messageList, {text: botMessage, author: "Bot"}])
@@ -56,7 +57,8 @@ export default function MessageList(){
                 <List >
                     {chatList.map((item, index)=>(
                                         <ListItem key={index}>
-                                        <ListItemText primary={item.name} secondary={item.id} />
+                                            <Link to={`/messagelist/${item.id}`}>{item.name}</Link>
+                                        {/* <ListItemText primary={item.name} secondary={item.id} /> */}
                                     </ListItem> 
                     ))}          
             

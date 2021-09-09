@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import MessageList from './components/MessageList';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Routes } from './components/Routes'; 
 
-const initPost = ["Hello, "]
+// const initPost = ["Hello, "]
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <MessageList />
+        <Routes />
       </header>
     </div>
   );

@@ -1,20 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-import { Routes } from './components/Routes'; 
-
-// const initPost = ["Hello, "]
+import { Routes } from "./components/Routes";
+import "./App.scss";
 
 function App() {
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <Routes />
-      </header>
-    </div>
+   <Routes />
   );
 }
 

@@ -5,6 +5,7 @@ import Chats from "../Chats";
 
 export const Routes = () => {
   return (
+    <div class="main">
     <BrowserRouter>
       <Link to="/chats">CHATS</Link>
       <Switch>
@@ -19,5 +20,6 @@ export const Routes = () => {
         </Route>
       </Switch>
     </BrowserRouter>
+    </div>
   );
 };

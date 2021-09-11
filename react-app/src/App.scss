@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+}
 
-  &-logo {}
+a {
+  // color: rgb(253, 253, 253) !important;
+  text-decoration: none;
 }
 
 
@@ -37,6 +40,19 @@
 }
 
 .main {
+  height: 35px;
+  font-size: 25px;
+  background-color: #1686b3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form {
   display: flex;
   justify-content: center;
+}
+
+.form_box {
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 5px;
 }

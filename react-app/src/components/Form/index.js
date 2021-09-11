@@ -22,28 +22,24 @@ export const Form = ({ onSubmit }) => {
   console.log(inputRef);
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/*<TextField*/}
-      {/*  placeholder="message"*/}
-      {/*  label="Label"*/}
-      {/*  value={value}*/}
-      {/*  onChange={handleChange}*/}
-      {/*  inputRef={inputRef}*/}
-      {/*/>*/}
-      <TextField
-        id="outlined-basic"
-        autoFocus
-        placeholder="message"
-        label="Your text"
-        variant="outlined"
-        value={value}
-        onChange={handleChange}
-        inputRef={inputRef}
-      />
-
-      <Button variant="contained" color="secondary" type="submit">
-        Send message
-      </Button>
+    <form onSubmit={handleSubmit} class="form">
+       <div class="form_box">     
+        <TextField
+          id="outlined-basic"
+          autoFocus
+          placeholder="message"
+          label="Your text"
+          variant="outlined"
+          value={value}
+          onChange={handleChange}
+          inputRef={inputRef}
+        />
+      </div>
+      <div class="form_box">
+        <Button variant="contained" size="large" color="secondary" type="submit">
+          Send message
+        </Button>
+      </div>
     </form>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { Home } from "../Home";
 import Chats from "../Chats";
+import { Profile, ThemedProfile } from "../Profile";
 
 export const Routes = () => {
   return (
@@ -9,9 +10,15 @@ export const Routes = () => {
     <div class="main">
       <Link to="/chats">CHATS</Link>
     </div>
-      <Switch>
+    <div class="main">
+      <Link to="/profile">Profile</Link>
+    </div>
+    <Switch>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/profile" exact>
+          <ThemedProfile theme={null} />
         </Route>
         <Route path="/chats/:chatId?" component={Chats}>
           {/* <Chats /> */}

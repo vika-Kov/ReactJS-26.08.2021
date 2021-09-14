@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import { ThemeContext } from "./utils/ThemeContext";
 import { store } from "./store";
 
-
 function App() {
   const [theme, setTheme] = useState("light");
 
@@ -21,7 +20,7 @@ function App() {
     </Provider>
   );
 }
-// 1. Установить redux, react-redux.
-// 2. Создать редьюсер профиля.Подключить страницу профиля к redux.
-// 3. Добавить на странице профиля чекбокс и сохранение его состояния в сторе.
+// 1. Установить redux, react-redux. - done
+// 2. Создать редьюсер профиля.Подключить страницу профиля к redux. - done
+// 3. Добавить на странице профиля чекбокс и сохранение его состояния в сторе. - done
 export default App;

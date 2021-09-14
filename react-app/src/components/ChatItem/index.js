@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const ChatItem = ({ chat }) => {
   const showName = useSelector((state) => state.showName);
-  
+
   console.log(showName);
   return (
     <ListItem>

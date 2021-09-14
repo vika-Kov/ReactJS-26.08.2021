@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeContext } from "../../utils/ThemeContext";
 import { store } from "../../store";
-import { toggleShowName } from "../../store/profile/actions";
+import { toggleCheckbox, toggleShowName } from "../../store/profile/actions";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const withContext = (Component) => {
   return (props) => {
@@ -14,16 +15,30 @@ const withContext = (Component) => {
 
 export const Profile = ({ theme }) => {
   const showName = useSelector((state) => state.showName);
+  const toggleChkbx = useSelector((state) => state.toggleCheckbox);
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(toggleShowName);
+    console.log("Toggle show name dispatched");
+    console.log(showName);
   };
-  
+
+  const handleChange = () => {
+    dispatch(toggleCheckbox);
+    console.log("Toggle checkbox dispatched");
+    console.log(toggleChkbx);
+  };
+
   return (
     <>
       <button onClick={theme.changeTheme}>Toggle theme</button>
       <button onClick={handleClick}>Toggle show name</button>
+      <Checkbox
+        checked={toggleChkbx}
+        onChange={handleChange}
+        inputProps={{ "aria-label": "primary checkbox" }}
+      />
 
       {showName && <div>Show name is true</div>}
 

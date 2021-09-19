@@ -3,7 +3,8 @@ import "./App.scss";
 import { useState, useCallback } from "react";
 import { Provider } from "react-redux";
 import { ThemeContext } from "./utils/ThemeContext";
-import { store } from "./store";
+import { persistor, store } from "./store";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -14,13 +15,12 @@ function App() {
 
   return (
     <Provider store={store}>
-      <ThemeContext.Provider value={{ theme, changeTheme }}>
-        <Routes />
-      </ThemeContext.Provider>
+      <PersistGate persistor={persistor}>
+        <ThemeContext.Provider value={{ theme, changeTheme }}>
+          <Routes />
+        </ThemeContext.Provider>
+      </PersistGate>
     </Provider>
   );
 }
-// 1. Установить redux, react-redux. - done
-// 2. Создать редьюсер профиля.Подключить страницу профиля к redux. - done
-// 3. Добавить на странице профиля чекбокс и сохранение его состояния в сторе. - done
 export default App;

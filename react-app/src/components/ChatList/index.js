@@ -25,7 +25,7 @@ export const ChatList = ({ chats, onDeleteChat, onAddChat }) => {
       ))}
       <form onSubmit={handleSubmit}>
         <input type="text" value={value} onChange={handleChange} />
-        <Button variant="outlined" disabled={!value}>
+        <Button variant="outlined" disabled={!value} onClick={handleSubmit}>
           Add chat
         </Button>
       </form>

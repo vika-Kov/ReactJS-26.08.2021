@@ -8,10 +8,10 @@ export const Routes = () => {
   return (
     <BrowserRouter>
       <div className="main">
-        <Link to="/chats">CHATS</Link>
+        <Link to="/chats" className="active">CHATS</Link>
       </div>
       <div className="main">
-        <Link to="/profile">Profile</Link>
+        <Link to="/profile" className="active">PROFILE</Link>
       </div>
       <Switch>
         <Route path="/" exact>

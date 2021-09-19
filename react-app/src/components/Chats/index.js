@@ -13,7 +13,7 @@ import { AUTHORS } from "../../utils/constants";
 import { Form } from "../Form";
 import { ChatList } from "../ChatList";
 import { addChat, deleteChat } from "../../store/chats/actions";
-import { addMessage } from "../../store/messages/actions";
+import { addMessageWithReply } from "../../store/messages/actions";
 import { selectIfChatExists } from "../../store/chats/selectors";
 
 // const initialMessages = {
@@ -59,41 +59,15 @@ function Chats(props) {
       console.log("chatId ", chatId);
       console.log("text ", text);
       console.log("author ", author);
-      dispatch(addMessage(chatId, text, author));
+      dispatch(addMessageWithReply(chatId, text, author));
     },
     [chatId]
   );
 
-  // const sendMessage = useCallback(
-  //   (message) => {
-  //     setMessages((prevMess) => ({
-  //       ...prevMess,
-  //       [chatId]: [...prevMess[chatId], message],
-  //     }));
-  //   },
-  //   [chatId]
-  // );
-
-  useEffect(() => {
-    let timeout;
-    const curMess = messages[chatId];
-
-    //        id: `mess-${Date.now()}`,
-    if (!!chatId && curMess?.[curMess.length - 1]?.author === AUTHORS.HUMAN) {
-      timeout = setTimeout(() => {
-        sendMessage("I am bot", AUTHORS.bot);
-      }, 3000);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [messages]);
-
   const handleAddMessage = useCallback(
-    //        id: `mess-${Date.now()}`,
     (text) => {
       sendMessage(text, AUTHORS.HUMAN);
     },
-    // [chatId, sendMessage]
     [sendMessage]
   );
 

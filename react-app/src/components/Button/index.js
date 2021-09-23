@@ -1,5 +1,5 @@
 import React from "react";
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+// import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import { useContext } from "react";
 import './styles.css';
 import { ThemeContext } from "../../utils/ThemeContext";
@@ -13,7 +13,7 @@ export const Button = ({ children }) => {
       }`}
       role="button"
     >
-      {children("text from child")}
+      {children}
     </div>
   );
 };

@@ -19,11 +19,11 @@ export const Form = ({ onSubmit }) => {
     inputRef.current.focus();
   };
 
-  console.log(inputRef);
+  // console.log(inputRef);
 
   return (
-    <form onSubmit={handleSubmit} class="form">
-       <div class="form_box">     
+    <form onSubmit={handleSubmit} className="form">
+      <div className="form_box">
         <TextField
           id="outlined-basic"
           autoFocus
@@ -35,8 +35,13 @@ export const Form = ({ onSubmit }) => {
           inputRef={inputRef}
         />
       </div>
-      <div class="form_box">
-        <Button variant="contained" size="large" color="secondary" type="submit">
+      <div className="form_box">
+        <Button
+          variant="contained"
+          size="large"
+          color="secondary"
+          type="submit"
+        >
           Send message
         </Button>
       </div>

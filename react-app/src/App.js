@@ -1,20 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import MessageList from './components/MessageList';
-import React, { useState, useEffect } from 'react';
+import { Routes } from "./components/Routes";
+import "./App.scss";
 
-const initPost = ["Hello, "]
 
 function App() {
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <MessageList />
-      </header>
-    </div>
+          <Routes />
   );
 }
 

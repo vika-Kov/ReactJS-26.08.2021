@@ -2,10 +2,11 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 20vmin;
-  pointer-events: none;
+a {
+  // color: rgb(253, 253, 253) !important;
+  text-decoration: none;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,15 +15,14 @@
 }
 
 .App-header {
-  background-color: #ffffffd0;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  font-style: italic;
-  color: black;
+  color: white;
 }
 
 .App-link {
@@ -39,16 +39,20 @@
   }
 }
 
-.form_f {
-  margin-right: 5px;
-  margin-bottom: 5px;
+.main {
+  height: 35px;
+  font-size: 25px;
+  background-color: #1686b3;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.form_ul {
+.form {
   display: flex;
   justify-content: center;
 }
 
-.form_ul_list {
-  width: 300px;
+.form_box {
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 5px;
 }

@@ -2,10 +2,21 @@
   text-align: center;
 }
 
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}
+
 a {
   // color: rgb(253, 253, 253) !important;
   text-decoration: none;
 }
+
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -40,9 +51,13 @@ a {
 }
 
 .main {
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  display: inline;
   height: 35px;
   font-size: 25px;
-  background-color: #1686b3;
+  background-color: #F50057;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 

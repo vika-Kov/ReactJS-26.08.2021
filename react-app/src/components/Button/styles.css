@@ -5,7 +5,16 @@
   cursor: pointer;
   max-width: 120px;
 }
+
 .my-button:active {
   background-color: rgba(34, 60, 80, 0.2);
   transform: scale(0.97);
+}
+
+.button-light {
+  background-color: rgb(255, 255, 255);
+}
+
+.button-dark {
+  background-color: darkgrey;
 }

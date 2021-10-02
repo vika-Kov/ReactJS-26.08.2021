@@ -14,12 +14,6 @@ export const SimpleText = ({ name, age, someObj }) => {
   );
 };
 
-// const Message = ({ question, onClick }) => {
-//   // const question = props.question;
-//   // const { question } = props;
-
-//   return <span onClick={onClick}>I am message, {question}</span>;
-// };
 
 class Message extends React.Component {
   render() {

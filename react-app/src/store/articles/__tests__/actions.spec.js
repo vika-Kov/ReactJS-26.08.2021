@@ -19,7 +19,6 @@ const {
     });
   });
 
-  //
   // describe("getArticles", () => {
 //       it('calls dispatch with getArticlesPending()', async () => {
 //         const mockDispatch = jest.fn();

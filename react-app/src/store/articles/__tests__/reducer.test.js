@@ -2,9 +2,10 @@ import  {articlesReducer, initialState} from './reducer'
 import {GET_ARTICLES_PENDING} from "./actions";
 import {REQUEST_STATUS} from "../../utils/constants";
 
-describe('articles reducer', () => { //  describe - группировка для наших тестов новостного редьюсера
+describe('articles reducer', () => {
 
-  it('GET_ARTICLES_PENDING', () => { // it - блок, конкретного unit-теста
+
+  it('GET_ARTICLES_PENDING', () => {
     const action = {
       type: GET_ARTICLES_PENDING,
       payload: {

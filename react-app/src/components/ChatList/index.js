@@ -1,31 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { List, Button } from "@material-ui/core";
-import { useState } from "react";
-// import { Button } from "../Button";
-import { ChatItem } from "../ChatItem";
 
-export const ChatList = ({ chats, onDeleteChat, onAddChat }) => {
-  const [value, setValue] = useState('');
+import { ChatItem } from "../ChatItem";
+import { useSelector, useDispatch } from "react-redux";
+import { selectChats } from "../../store/chats/selectors";
+import { addChat, addChatFb } from "../../store/chats/actions";
+import { ref, onValue, set } from "firebase/database";
+import { db } from "../../services/firebase";
+
+export const ChatList = ({ onDeleteChat, onAddChat }) => {
+  const chats = useSelector(selectChats);
+  // const [chats, setChats] = useState([]);
+  const dispatch = useDispatch();
+  const [value, setValue] = useState("");
 
   const handleChange = (e) => {
     setValue(e.target.value);
-  }
+  };
 
-  const handleSubmit = (e) => {
+
+  const handleAddChat = (e) => {
     e.preventDefault();
 
-    onAddChat(value);
-    setValue('');
-  }
+    const newId = `chat-${Date.now()}`;
+    const chatsDbRef = ref(db, `chats/${newId}`);
+
+    set(chatsDbRef,{
+      id:newId,
+      name:value,
+    });
+
+    setValue("")
+  };
 
   return (
     <List>
       {chats.map((chat) => (
-        <ChatItem chat={chat} key={chat.id} id={chat.id} onDelete={onDeleteChat} />
+        <ChatItem
+          chat={chat}
+          key={chat.id}
+          id={chat.id}
+          onDelete={onDeleteChat}
+        />
       ))}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleAddChat}>
         <input type="text" value={value} onChange={handleChange} />
-        <Button variant="outlined" disabled={!value} onClick={handleSubmit}>
+        <Button variant="outlined" type="submit" disabled={!value}>
           Add chat
         </Button>
       </form>
